@@ -6,7 +6,8 @@ CREATE TABLE professor(
   fk_escola int
 );
 
+SELECT * FROM professor;
+
 INSERT INTO professor(idade, quantidade_professor, nome) VALUES ('2016-06-25', 15, 'Cláudio');
 
 SELECT * FROM professor;
-
