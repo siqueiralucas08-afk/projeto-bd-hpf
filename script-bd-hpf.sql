@@ -127,3 +127,17 @@ INSERT INTO matricula (numero_matricula, cpf, nome, comprovante_residencia, data
 ('MAT2026001', '444.444.444-44', 'Pedro Santos', 'comprovantes/pedro.pdf', '2026-01-10 09:00:00', 'Ativa', 1),
 ('MAT2026002', '555.555.555-55', 'Julia Costa', 'comprovantes/julia.pdf', '2026-01-11 10:00:00', 'Ativa', 2),
 ('MAT2026003', '666.666.666-66', 'Lucas Oliveira', 'comprovantes/lucas.pdf', '2026-01-12 11:00:00', 'Ativa', 3);
+
+CREATE TABLE responsavel (
+  id_responsavel SERIAL PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  cpf VARCHAR(14) NOT NULL,
+  telefone VARCHAR (20) NOT NULL,
+  email VARCHAR(255)
+);
+
+INSERT INTO responsavel (nome, cpf, telefone, email) VALUES
+('Paulo Santos', '777.777.777-77', '(45) 99999-1001', 'paulo@example.com'),
+('Fernanda Costa', '888.888.888-88', '(45) 99999-1002', 'fernanda@example.com'),
+('Norberto Oliveira', '999.999.999-99', '(45) 99999-1003', 'norberto@example.com');
+
