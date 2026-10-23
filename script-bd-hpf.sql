@@ -43,3 +43,16 @@ INSERT INTO historico_presenca (data, hora_entrada, hora_saida, entrada_aluno, s
 ('2026-02-02', '2026-02-02 07:00:00', '2026-02-02 12:00:00', '2026-02-02 07:05:00', '2026-02-02 11:55:00', 'Presente', 1),
 ('2026-02-03', '2026-02-03 07:00:00', '2026-02-03 12:00:00', '2026-02-03 07:10:00', '2026-02-03 11:50:00', 'Presente', 2),
 ('2026-02-04', '2026-02-04 07:00:00', '2026-02-04 12:00:00', NULL, NULL, 'Ausente', 3);
+
+CREATE TABLE escola (
+    id_escola SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    cnpj VARCHAR(18),
+    telefone VARCHAR(20)
+);
+
+INSERT INTO escola (nome, endereco, cnpj, telefone) VALUES
+('Escola Municipal Primavera', 'Rua das Flores, 100', '12.345.678/0001-90', '(45) 3333-1000'),
+('Escola Municipal Horizonte', 'Avenida Brasil, 200', '23.456.789/0001-01', '(45) 3333-2000'),
+('Escola Municipal Saber', 'Rua das Araucárias, 300', '34.567.890/0001-12', '(45) 3333-3000');
