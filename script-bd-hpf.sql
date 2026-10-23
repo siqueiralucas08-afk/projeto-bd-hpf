@@ -69,3 +69,14 @@ INSERT INTO aluno_responsavel (id_aluno, id_responsavel, parentesco) VALUES
 (1, 1, 'Pai'),
 (2, 2, 'Mãe'),
 (3, 3, 'Pai');
+
+CREATE TABLE disciplina (
+    id_disciplina SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    carga_horaria INT NOT NULL
+);
+
+INSERT INTO disciplina (nome, carga_horaria) VALUES
+('Matemática', 160),
+('Português', 120),
+('Ciências', 80);
