@@ -80,3 +80,19 @@ INSERT INTO disciplina (nome, carga_horaria) VALUES
 ('Matemática', 160),
 ('Português', 120),
 ('Ciências', 80);
+
+CREATE TABLE aluno (
+    id_aluno SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    link_foto VARCHAR(255),
+    id_turma BIGINT NOT NULL,
+    FOREIGN KEY (id_turma) REFERENCES turma(id_turma)
+);
+
+INSERT INTO aluno (nome, cpf, data_nascimento, link_foto, id_turma) VALUES
+('Pedro Santos', '444.444.444-44', '2018-03-10', 'fotos/pedro.jpg', 1),
+('Julia Costa', '555.555.555-55', '2017-07-21', 'fotos/julia.jpg', 2),
+('Lucas Oliveira', '666.666.666-66', '2016-11-05', 'fotos/lucas.jpg', 3);
+
