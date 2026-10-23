@@ -27,3 +27,19 @@ INSERT INTO professor (data, cpf, data_nascimento, email, id_escola) VALUES
 ('Carlos Lima', '222.222.222-22', '1979-08-23', 'carlos@example.com', 2),
 ('Mariana Alves', '333.333.333-33', '1990-01-15', 'mariana@example.com', 3);
 
+CREATE TABLE historico_presenca (
+    id_professor SERIAL PRIMARY KEY,
+    data DATE NOT NULL,
+    hora_entrada TIMESTAMP,
+    hora_saida TIMESTAMP,
+    entrada_aluno TIMESTAMP,
+    saida_aluno TIMESTAMP,
+    status_presenca VARCHAR(20),
+    id_aluno BIGINT NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+);
+
+INSERT INTO historico_presenca (data, hora_entrada, hora_saida, entrada_aluno, saida_aluno, status_presenca, id_aluno) VALUES
+('2026-02-02', '2026-02-02 07:00:00', '2026-02-02 12:00:00', '2026-02-02 07:05:00', '2026-02-02 11:55:00', 'Presente', 1),
+('2026-02-03', '2026-02-03 07:00:00', '2026-02-03 12:00:00', '2026-02-03 07:10:00', '2026-02-03 11:50:00', 'Presente', 2),
+('2026-02-04', '2026-02-04 07:00:00', '2026-02-04 12:00:00', NULL, NULL, 'Ausente', 3);
