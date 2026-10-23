@@ -111,3 +111,19 @@ INSERT INTO turma (serie, quantidade_aluno, chamada, ano_letivo, id_escola) VALU
 ('2º Ano A', 1, 1, 2026, 2),
 ('3º Ano A', 1, 1, 2026, 3);
 
+CREATE TABLE matricula (
+    id_matricula SERIAL PRIMARY KEY,
+    numero_matricula VARCHAR(50) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    comprovante_residencia VARCHAR(255),
+    data_matricula TIMESTAMP,
+    status VARCHAR(50),
+    id_aluno BIGINT NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+);
+
+INSERT INTO matricula (numero_matricula, cpf, nome, comprovante_residencia, data_matricula, status, id_aluno) VALUES
+('MAT2026001', '444.444.444-44', 'Pedro Santos', 'comprovantes/pedro.pdf', '2026-01-10 09:00:00', 'Ativa', 1),
+('MAT2026002', '555.555.555-55', 'Julia Costa', 'comprovantes/julia.pdf', '2026-01-11 10:00:00', 'Ativa', 2),
+('MAT2026003', '666.666.666-66', 'Lucas Oliveira', 'comprovantes/lucas.pdf', '2026-01-12 11:00:00', 'Ativa', 3);
