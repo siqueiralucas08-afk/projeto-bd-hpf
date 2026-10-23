@@ -96,3 +96,18 @@ INSERT INTO aluno (nome, cpf, data_nascimento, link_foto, id_turma) VALUES
 ('Julia Costa', '555.555.555-55', '2017-07-21', 'fotos/julia.jpg', 2),
 ('Lucas Oliveira', '666.666.666-66', '2016-11-05', 'fotos/lucas.jpg', 3);
 
+CREATE TABLE turma (
+    id_turma SERIAL PRIMARY KEY,
+    serie VARCHAR(100) NOT NULL,
+    quantidade_aluno INT,
+    chamada INT,
+    ano_letivo INT NOT NULL,
+    id_escola BIGINT NOT NULL
+    FOREIGN KEY (id_escola) REFERENCES escola(id_escola)
+);
+
+INSERT INTO turma (serie, quantidade_aluno, chamada, ano_letivo, id_escola) VALUES
+('1º Ano A', 1, 1, 2026, 1),
+('2º Ano A', 1, 1, 2026, 2),
+('3º Ano A', 1, 1, 2026, 3);
+
